@@ -1,5 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-
+interface Image {
+  name: string;
+  size: string,
+  url: string | ArrayBuffer
+}
 @Component({
   selector: "app-file-upload",
   templateUrl: "./file-upload.component.html",
@@ -9,6 +13,7 @@ export class FileUploadComponent implements OnInit {
   message: string;
   imagePath: any;
   imgURL: string | ArrayBuffer;
+  imageDetails: Image;
 
   constructor() {}
 
@@ -25,7 +30,7 @@ export class FileUploadComponent implements OnInit {
     this.imagePath = files;
     reader.readAsDataURL(files[0]);
     reader.onload = _event => {
-      this.imgURL = reader.result;
+      this.imageDetails.url = reader.result;
     };
   }
 }
