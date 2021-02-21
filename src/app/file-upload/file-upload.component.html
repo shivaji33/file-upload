@@ -1,19 +1,19 @@
-<div class="dropzone_container">
-	<div class="previews">
+<div class="dropzone_container" appDropFile (fileDropped)="droppedFile($event)">
+	<div class="previews" *ngIf="imgURL">
 		<div class="uploaded_image">
 			<div class="close_button">
 				<img src="https://www.reduceimages.com/img/close.png">
     		</div>
-				<div class="preview_container" *ngIf="imgURL">
+				<div class="preview_container">
 					<div class="vert"></div>
 					<img class="preview" [src]="imgURL">
     			</div>
-          <div class="filename">Screenshot from 2020-12-04 18-39-37.png</div>
-          <div class="filesize">332.11 KB</div>
+          <div class="filename">{{imagePath.name}}</div>
+          <div class="filesize">{{bytesToSize(imagePath.size || 0)}}</div>
 				</div>
 			</div>
 			<div class="drag-section">
-				<div class="drop-message">
+				<div class="drop-message" *ngIf="!imgURL">
 					<h4>Drop your image here!</h4>
 				</div>
 				<button class="file-upload-label" (click)="inputFile.click()">Select files</button>

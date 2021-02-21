@@ -1,9 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-interface Image {
-  name: string;
-  size: string,
-  url: string | ArrayBuffer
-}
 @Component({
   selector: "app-file-upload",
   templateUrl: "./file-upload.component.html",
@@ -11,14 +6,15 @@ interface Image {
 })
 export class FileUploadComponent implements OnInit {
   message: string;
-  imagePath: any;
   imgURL: string | ArrayBuffer;
-  imageDetails: Image;
+  imagePath: any;
 
   constructor() {}
 
   ngOnInit() {}
+
   preview(files) {
+    console.log(files);
     if (files.length === 0) return;
     const mimeType = files[0].type;
     if (mimeType.match(/image\/*/) == null) {
@@ -27,10 +23,20 @@ export class FileUploadComponent implements OnInit {
     }
 
     const reader = new FileReader();
-    this.imagePath = files;
+    this.imagePath = files[0];
+    console.log(this.imagePath);
     reader.readAsDataURL(files[0]);
     reader.onload = _event => {
-      this.imageDetails.url = reader.result;
+      this.imgURL = reader.result;
     };
   }
+  bytesToSize(bytes) {
+   var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+   if (bytes == 0) return '0 Byte';
+   const i = Math.floor(Math.log(bytes) / Math.log(1024));
+   return (Math.round(bytes / Math.pow(1024, i) * 100) / 100) + ' ' + sizes[i];
+}
+droppedFile(files) {
+  
+}
 }

@@ -58,6 +58,7 @@ input[type="file"] {
           max-width: 100px;
           max-height: 100px;
           margin-right: 2px;
+           margin-left: 2px;
           position: relative;
           left: -3px;
         }
@@ -75,8 +76,7 @@ input[type="file"] {
       .filesize {
         font-size: 0.8em;
         padding: 2px;
-        background-color: #37b7a0;
-        color: white;
+        text-align: center;
       }
     }
   }
