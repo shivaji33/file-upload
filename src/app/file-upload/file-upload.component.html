@@ -1,0 +1,16 @@
+<div class="dropzone_container">
+	<div class="previews">
+		<div class="uploaded_image">
+			<div class="close_button">
+				<img src="https://www.reduceimages.com/img/close.png">
+    							</div>
+			</div>
+		</div>
+		<div class="drag-section">
+			<div class="drop-message">
+				<h4>Drop your image here!</h4>
+			</div>
+			<button class="file-upload-label" (click)="inputFile.click()">Select files</button>
+		</div>
+	</div>
+	<input type="file" #inputFile (change)="preview(inputFile.files)">

@@ -1,4 +1,4 @@
-file-upload.component.htmlinput[type="file"] {
+input[type="file"] {
   display: none;
 }
 .dropzone_container {
@@ -32,6 +32,11 @@ file-upload.component.htmlinput[type="file"] {
         border-radius: 13px;
         z-index: 3;
         transition: all 0.5s cubic-bezier(0, 0.5, 0.5, 1);
+        img {
+          display: block;
+          width: 10px;
+          height: 10px;
+        }
       }
       .preview_container {
         text-align: center;
