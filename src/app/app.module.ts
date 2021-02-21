@@ -12,4 +12,3 @@ import { DropFileDirective } from './drop-file.directive';
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
-0
