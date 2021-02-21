@@ -1,0 +1,96 @@
+input[type="file"] {
+  display: none;
+}
+.dropzone_container {
+  position: relative;
+  background: #fff;
+  border: 3px dashed blue;
+  margin-top: 15px;
+  min-height: 116px;
+  transition: all 0.5s cubic-bezier(0, 0.5, 0.5, 1);
+  cursor: pointer;
+  margin-bottom: 10px;
+  .previews {
+    display: inline-block;
+    .uploaded_image {
+      float: left;
+      width: 110px;
+      border: solid 1px #37b7a0;
+      background-color: white;
+      border-radius: 2px;
+      margin: 15px 12px 5px 10px;
+      position: relative;
+      .close_button {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+        padding: 8px;
+        background-color: #ddd;
+        border-radius: 13px;
+        z-index: 3;
+        transition: all 0.5s cubic-bezier(0, 0.5, 0.5, 1);
+      }
+      .preview_container {
+        text-align: center;
+        width: 110px;
+        height: 110px;
+        padding: 0;
+        .vert {
+          vertical-align: middle;
+          height: 100%;
+          width: 1px;
+          display: inline-block;
+        }
+        img.preview {
+          vertical-align: middle;
+          max-width: 100px;
+          max-height: 100px;
+          margin-right: 2px;
+          position: relative;
+          left: -3px;
+        }
+      }
+      .filename {
+        font-size: 0.85em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        background-color: #37b7a0;
+        color: white;
+        padding: 2px;
+        white-space: nowrap;
+      }
+      .filesize {
+        font-size: 0.8em;
+        padding: 2px;
+        background-color: #37b7a0;
+        color: white;
+      }
+    }
+  }
+  .drag-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    .drop-message {
+      font-size: 24px;
+      margin-bottom: 1rem;
+    }
+    .file-upload-label {
+      padding: 0.5rem 2rem;
+      border: 1px solid blue;
+      background: blue;
+      border-radius: 3px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
